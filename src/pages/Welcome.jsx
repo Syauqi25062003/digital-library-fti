@@ -14,7 +14,7 @@ export default function Welcome() {
   return (
     <>
       {/* HERO SECTION */}
-      <div className="relative w-full h-[70vh] flex items-center justify-center">
+      <div className="relative w-full h-[70vh] flex items-center justify-center -mt-8">
         <img
           src={BgFTI}
           alt="Library Background"

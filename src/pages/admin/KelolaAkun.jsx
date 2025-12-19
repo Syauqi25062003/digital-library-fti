@@ -33,7 +33,12 @@ export default function KelolaAkun() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
-      <h1 className="text-3xl font-bold text-green-900">Kelola Akun Mahasiswa</h1>
+      <h1 className="text-3xl font-bold text-green-600 mb-2">
+        Kelola Akun Mahasiswa
+      </h1>
+      <p className="text-gray-600 text-sm mb-5">
+        Tambah, ubah, atau hapus akun mahasiswa. Pastikan data mahasiswa selalu terupdate.
+      </p>
 
       {/* FILTER */}
       <div className="flex flex-wrap gap-4">

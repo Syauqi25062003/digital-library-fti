@@ -2,6 +2,7 @@ import { useAuth } from "../../context/AuthContext";
 import { dummyFiles } from "../../constants/files";
 import { STATUS } from "../../constants/status";
 import { Link } from "react-router-dom";
+import DashboardHeader from "../../components/DashboardHeader";
 
 export default function DashboardMahasiswa() {
   const { currentUser } = useAuth();
@@ -29,14 +30,7 @@ export default function DashboardMahasiswa() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="mb-4">
-        <h1 className="text-3xl font-bold text-gray-900">
-          Dashboard Mahasiswa
-        </h1>
-        <p className="text-gray-600 text-sm">
-          Selamat datang, <span className="font-semibold">{user.name}</span>
-        </p>
-      </div>
+      <DashboardHeader title="Dashboard Mahasiswa" user={user} />
 
       {/* Statistik */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

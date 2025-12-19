@@ -55,7 +55,8 @@ const handleKeywordKeyDown = (e) => {
     <div className="max-w-4xl mx-auto space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Unggah Laporan</h1>
+        <h1 className="text-3xl font-bold text-green-600 mb-2">
+          Unggah Laporan</h1>
         <p className="text-gray-600 text-sm">
           Unggah laporan KP atau Skripsi sesuai template resmi
         </p>

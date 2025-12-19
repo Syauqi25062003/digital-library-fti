@@ -16,7 +16,7 @@ export const dummyFiles = [
     keywords: ["TF-IDF", "Cosine Similarity", "Plagiarisme"],
     abstrak: "Penelitian ini membahas deteksi kemiripan judul skripsi menggunakan TF-IDF dan Cosine Similarity.",
     status: STATUS.DITERIMA,
-    pdfUrl: "/Efektivitas TF-IDF dan Cosine Similarity untuk Deteksi Plagiarisme.pdf",
+    pdfUrl: "/plagiarisme_tfidf_cosine.pdf",
   },
   {
     id: 2,
@@ -50,7 +50,7 @@ export const dummyFiles = [
     keywords: ["SIAKAD", "Web"],
     abstrak: "Dokumen ini masih dalam proses verifikasi oleh admin.",
     status: STATUS.PENDING,
-    pdfUrl: "/siakad_pending.pdf",
+    pdfUrl: "/plagiarisme_tfidf_cosine.pdf",
   },
   {
     id: 4,

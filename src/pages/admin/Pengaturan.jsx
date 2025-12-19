@@ -20,7 +20,12 @@ export default function Pengaturan() {
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow">
-      <h1 className="text-2xl font-bold text-green-700 mb-6">Pengaturan Admin</h1>
+      <h1 className="text-3xl font-bold text-green-600 mb-2">
+        Pengaturan Admin
+      </h1>
+      <p className="text-gray-600 text-sm mb-5">
+        Atur preferensi sistem, notifikasi, dan opsi lainnya untuk administrasi Digital Library FTI.
+      </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>

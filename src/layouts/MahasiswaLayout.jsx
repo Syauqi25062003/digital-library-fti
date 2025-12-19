@@ -11,13 +11,12 @@ export default function MahasiswaLayout({ children }) {
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-gray-50 -mt-7">
       {/* Sidebar */}
       <MahasiswaSidebar />
 
       {/* Konten utama */}
-      <div className="flex-1 p-6 md:ml-64">
-        {/* md:ml-64 → space untuk desktop sidebar, supaya konten tidak tertutup */}
+      <div className="flex-1 md:ml-64 p-6">
         {children}
       </div>
     </div>

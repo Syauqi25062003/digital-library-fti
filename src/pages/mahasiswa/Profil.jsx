@@ -14,7 +14,8 @@ export default function Profil() {
     <div className="max-w-3xl mx-auto space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Profil Mahasiswa</h1>
+        <h1 className="text-3xl font-bold text-green-600 mb-2">
+          Profil Mahasiswa</h1>
         <p className="text-gray-600 mt-1 text-sm">
           Informasi akun akademik Anda
         </p>

@@ -83,9 +83,13 @@ export default function UploadManual() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
-      <h1 className="text-2xl font-bold text-green-900">Unggah Laporan Admin</h1>
-
+    <div>
+  <h1 className="text-3xl font-bold text-green-600 mb-3">
+    Unggah Laporan Admin
+  </h1>
+  <p className="text-gray-600 text-sm mb-5">
+    Unggah laporan mahasiswa atau dokumen administrasi terkait KP/Skripsi.
+  </p>
       {/* Watermark Template */}
       <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-4 flex flex-col md:flex-row items-center gap-4">
         <img

@@ -2,8 +2,11 @@ import { useState } from "react";
 import { dummyFiles } from "../../constants/files";
 import { STATUS } from "../../constants/status";
 import { FiFileText, FiCheckCircle, FiClock, FiXCircle } from "react-icons/fi";
+import DashboardHeader from "../../components/DashboardHeader";
+import { useAuth } from "../../context/AuthContext";
 
 export default function AdminDashboard() {
+  const { currentUser } = useAuth();
   const [filterProdi, setFilterProdi] = useState("");
 
   const filteredFiles = dummyFiles.filter((file) =>
@@ -11,41 +14,15 @@ export default function AdminDashboard() {
   );
 
   const total = filteredFiles.length;
-  const diterima = filteredFiles.filter(
-    (f) => f.status === STATUS.DITERIMA
-  ).length;
-  const pending = filteredFiles.filter(
-    (f) => f.status === STATUS.PENDING
-  ).length;
-  const ditolak = filteredFiles.filter(
-    (f) => f.status === STATUS.DITOLAK
-  ).length;
+  const diterima = filteredFiles.filter((f) => f.status === STATUS.DITERIMA).length;
+  const pending = filteredFiles.filter((f) => f.status === STATUS.PENDING).length;
+  const ditolak = filteredFiles.filter((f) => f.status === STATUS.DITOLAK).length;
 
   const stats = [
-    {
-      title: "Total Dokumen",
-      value: total,
-      color: "green",
-      icon: <FiFileText size={28} />,
-    },
-    {
-      title: "Menunggu Verifikasi",
-      value: pending,
-      color: "yellow",
-      icon: <FiClock size={28} />,
-    },
-    {
-      title: "Diterima",
-      value: diterima,
-      color: "green",
-      icon: <FiCheckCircle size={28} />,
-    },
-    {
-      title: "Ditolak",
-      value: ditolak,
-      color: "red",
-      icon: <FiXCircle size={28} />,
-    },
+    { title: "Total Dokumen", value: total, color: "green", icon: <FiFileText size={28} /> },
+    { title: "Menunggu Verifikasi", value: pending, color: "yellow", icon: <FiClock size={28} /> },
+    { title: "Diterima", value: diterima, color: "green", icon: <FiCheckCircle size={28} /> },
+    { title: "Ditolak", value: ditolak, color: "red", icon: <FiXCircle size={28} /> },
   ];
 
   const colorMap = {
@@ -55,10 +32,9 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6">
-      <h1 className="text-3xl font-bold text-green-900 mb-8">
-        Dashboard Admin
-      </h1>
+    <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
+      {/* Header */}
+      <DashboardHeader title="Dashboard Admin" user={currentUser} />
 
       {/* Filter Prodi */}
       <div className="mb-8 flex items-center gap-4">
@@ -86,9 +62,7 @@ export default function AdminDashboard() {
             </div>
             <div>
               <p className="text-gray-500 text-sm">{stat.title}</p>
-              <p className="text-2xl font-bold">
-                {stat.value}
-              </p>
+              <p className="text-2xl font-bold">{stat.value}</p>
             </div>
           </div>
         ))}
