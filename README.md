@@ -1,121 +1,116 @@
 # Digital Library - Prototipe Interaktif
 
-Prototype Digital Library Fakultas Teknologi Informasi (FTI) yang dikembangkan sebagai bagian dari Kerja Praktik (KP).
+Prototype Digital Library FTI merupakan aplikasi perpustakaan digital berbasis web yang dirancang untuk mendukung pengelolaan dan pencarian Laporan Kerja Praktik (KP) dan Skripsi di lingkungan Fakultas Teknologi Informasi (FTI).
 
-Aplikasi ini berfokus pada perancangan antarmuka (UI/UX) dan alur sistem untuk pengelolaan laporan Kerja Praktik (KP) dan Skripsi, menggunakan data dummy tanpa backend.
+Aplikasi ini dibuat sebagai luaran Kerja Praktik (KP) dan berfokus pada perancangan antarmuka (UI/UX) serta simulasi alur sistem menggunakan data dummy, tanpa backend dan database nyata.
 
 🎯 Tujuan Proyek
 
-Menyediakan prototype sistem perpustakaan digital FTI
+Menyediakan prototype sistem perpustakaan digital untuk laporan KP dan Skripsi
 
-Memudahkan mahasiswa dalam mengunggah dan memantau status laporan KP/Skripsi
+Memudahkan mahasiswa dalam mencari referensi laporan terdahulu
 
-Memudahkan admin prodi dalam melakukan review dan pengelolaan arsip laporan
+Mensimulasikan alur unggah dan review laporan oleh admin prodi
 
-Menyediakan fitur pencarian dan preview dokumen bagi publik
+Menjadi media demonstrasi konsep sistem untuk kebutuhan akademik (KP)
+
+👥 Role Pengguna
+
+Aplikasi ini memiliki tiga role utama:
+
+Role	Deskripsi
+Mahasiswa	Mengunggah laporan KP/Skripsi, melihat status unggahan, dan mengakses dokumen yang telah diterima
+Admin IF	Melakukan review laporan dari Program Studi Informatika
+Admin SI	Melakukan review laporan dari Program Studi Sistem Informndasi
+🔁 Alur Sistem (Simulasi)
+👤 Mahasiswa
+
+Login ke sistem (dummy)
+
+Mengunggah laporan KP atau Skripsi
+
+Laporan berstatus Pending
+
+Melihat status laporan: Pending / Diterima / Ditolak
+
+Jika ditolak, mahasiswa dapat mengunggah ulang laporan
+
+🛠️ Admin Prodi (IF / SI)
+
+Melihat daftar laporan sesuai prodi
+
+Preview dokumen PDF
+
+Memberikan keputusan:
+
+Diterima → tampil di repository
+
+Ditolak → disertai alasan penolakan
+
+⚠️ Seluruh alur di atas bersifat simulasi frontend menggunakan data dummy.
+
+🧩 Fitur Utama
+
+🔍 Pencarian dokumen berdasarkan judul, penulis, dan kata kunci
+
+🗂️ Filter berdasarkan prodi dan tahun
+
+📄 Preview dokumen PDF (PDF.js)
+
+⬆️ Upload laporan (dummy)
+
+📊 Dashboard Admin & Mahasiswa
+
+👥 Manajemen role pengguna (dummy)
 
 🛠️ Teknologi yang Digunakan
 
-Frontend: React JS
+Frontend: React.js
 
 Build Tool: Vite
 
 Styling: Tailwind CSS
 
-State Management: React Hooks & Context API
+State Management: React Context (Auth)
 
 PDF Preview: PDF.js
 
-Data: Dummy data (tanpa backend)
+Data: Dummy Data (tanpa backend)
 
-👥 Role & Hak Akses
-👤 Publik (Tanpa Login)
-
-Melihat daftar dokumen yang sudah diterima
-
-Pencarian & filter dokumen
-
-Melihat detail dokumen
-
-Preview & download PDF
-
-🎓 Mahasiswa
-
-Login (akun harus diaktifkan admin)
-
-Mengunggah laporan KP/Skripsi
-
-Melihat status unggahan (Pending / Diterima / Ditolak)
-
-Melihat alasan penolakan
-
-Mengunggah ulang laporan jika ditolak
-
-Download dokumen yang sudah diterima
-
-🛠️ Admin Prodi (Admin IF & Admin SI)
-
-Review laporan sesuai prodi
-
-Preview dokumen PDF
-
-Menerima atau menolak laporan
-
-Mengelola arsip laporan
-
-Mengelola akun mahasiswa
-
-Catatan: Admin IF hanya dapat mengelola dokumen Prodi Informatika, dan Admin SI hanya Prodi Sistem Informasi.
-
-🔄 Alur Sistem (Ringkas)
-
-Mahasiswa mengunggah laporan → status Pending
-
-Admin prodi melakukan review
-
-Admin memilih:
-
-Diterima → dokumen muncul di beranda & dapat diakses publik
-
-Ditolak → mahasiswa melihat alasan dan dapat upload ulang
-
-Semua alur disimulasikan menggunakan state lokal dan data dummy.
-
-🧪 Catatan Penting
-
-Proyek ini tidak menggunakan backend
-
-Tidak ada database atau autentikasi real
-
-Semua data disimpan dalam file constants sebagai simulasi
-
-Fokus utama pada desain UI, UX, dan flow sistem
-
-🚀 Cara Menjalankan Project
-Prasyarat
-
-Node.js (disarankan v18+)
-
-npm / yarn
-
-Langkah Menjalankan
+📁 Struktur Folder Utama
+digital-library/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── layouts/
+│   ├── constants/
+│   ├── context/
+│   └── assets/
+├── package.json
+├── vite.config.js
+└── README.md
+▶️ Cara Menjalankan Project
+1. Clone Repository
 git clone https://github.com/Syauqi25062003/digital-library-fti.git
 cd digital-library-fti
+2. Install Dependencies
 npm install
+3. Jalankan Aplikasi
 npm run dev
 
-Akses aplikasi di browser:
+Aplikasi akan berjalan di browser pada:
 
 http://localhost:5173
-📂 Struktur Folder Utama
-src/
- ├── components/     # Komponen reusable
- ├── pages/          # Halaman aplikasi
- ├── layouts/        # Layout role-based
- ├── context/        # Auth context (dummy)
- ├── constants/      # Data dummy & enum
- └── assets/         # Gambar & file statis
-📌 Status Pengembangan
+📌 Catatan Penting
+
+Proyek ini hanya prototype frontend
+
+Tidak terhubung ke backend atau database
+
+Seluruh data bersifat dummy
+
+Digunakan untuk kebutuhan Kerja Praktik (KP) dan pembelajaran
 
 ✔ Prototype frontend selesai ✔ Alur utama sistem tersedia ✔ Siap untuk demonstrasi & laporan KP
 
