@@ -1,92 +1,138 @@
 # Digital Library - Prototipe Interaktif
 
-Proyek **Digital Library** ini adalah prototipe aplikasi manajemen laporan KP & Skripsi untuk mahasiswa dan admin.  
-Fitur utama meliputi unggah laporan, pantau status, preview PDF, manajemen akun, serta role-based akses.
+Prototype Digital Library Fakultas Teknologi Informasi (FTI) yang dikembangkan sebagai bagian dari Kerja Praktik (KP).
 
----
+Aplikasi ini berfokus pada perancangan antarmuka (UI/UX) dan alur sistem untuk pengelolaan laporan Kerja Praktik (KP) dan Skripsi, menggunakan data dummy tanpa backend.
 
-## Fitur
+🎯 Tujuan Proyek
 
-### Mahasiswa
-- Daftar & login (akun harus diaktifkan admin sesuai prodi)
-- Unggah laporan KP / Skripsi (dengan template watermark resmi)
-- Lihat status laporan (Pending, Revisi, Diterima, Ditolak)
-- Preview PDF sebelum download
-- Profil & pengaturan akun (ubah nama/password)
+Menyediakan prototype sistem perpustakaan digital FTI
 
-### Admin
-- Dashboard admin
-- Review laporan mahasiswa
-- Unggal laporan manual
-- Kelola arsip laporan
-- Kelola akun mahasiswa (aktivasi, tolak, ban/unban)
-- Profil & pengaturan admin
+Memudahkan mahasiswa dalam mengunggah dan memantau status laporan KP/Skripsi
 
----
+Memudahkan admin prodi dalam melakukan review dan pengelolaan arsip laporan
 
-## Struktur Folder
+Menyediakan fitur pencarian dan preview dokumen bagi publik
 
-```text
-digital-library/
-│
-├── node_modules/
-├── public/               # File statis (favicon, gambar, PDF)
-├── src/
-│   ├── assets/           # Gambar, logo, watermark template
-│   ├── components/       # Komponen reusable (Navbar, AuthModal, PDFPreview, dsb.)
-│   ├── constants/        # Data dummy, status, roles, dsb.
-│   ├── context/          # AuthContext
-│   ├── layouts/          # Layouts: Main, Mahasiswa, Admin
-│   ├── pages/            # Halaman utama, Mahasiswa & Admin
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css / App.css
-├── .env.local
-├── package.json
-├── tailwind.config.js
-└── README.md
+🛠️ Teknologi yang Digunakan
 
-Persiapan & Instalasi (lokal)
+Frontend: React JS
 
-Pastikan Node.js sudah terinstal
-Cek dengan:
+Build Tool: Vite
 
-node -v
-npm -v
+Styling: Tailwind CSS
 
-Install dependencies
+State Management: React Hooks & Context API
 
+PDF Preview: PDF.js
+
+Data: Dummy data (tanpa backend)
+
+👥 Role & Hak Akses
+👤 Publik (Tanpa Login)
+
+Melihat daftar dokumen yang sudah diterima
+
+Pencarian & filter dokumen
+
+Melihat detail dokumen
+
+Preview & download PDF
+
+🎓 Mahasiswa
+
+Login (akun harus diaktifkan admin)
+
+Mengunggah laporan KP/Skripsi
+
+Melihat status unggahan (Pending / Diterima / Ditolak)
+
+Melihat alasan penolakan
+
+Mengunggah ulang laporan jika ditolak
+
+Download dokumen yang sudah diterima
+
+🛠️ Admin Prodi (Admin IF & Admin SI)
+
+Review laporan sesuai prodi
+
+Preview dokumen PDF
+
+Menerima atau menolak laporan
+
+Mengelola arsip laporan
+
+Mengelola akun mahasiswa
+
+Catatan: Admin IF hanya dapat mengelola dokumen Prodi Informatika, dan Admin SI hanya Prodi Sistem Informasi.
+
+🔄 Alur Sistem (Ringkas)
+
+Mahasiswa mengunggah laporan → status Pending
+
+Admin prodi melakukan review
+
+Admin memilih:
+
+Diterima → dokumen muncul di beranda & dapat diakses publik
+
+Ditolak → mahasiswa melihat alasan dan dapat upload ulang
+
+Semua alur disimulasikan menggunakan state lokal dan data dummy.
+
+🧪 Catatan Penting
+
+Proyek ini tidak menggunakan backend
+
+Tidak ada database atau autentikasi real
+
+Semua data disimpan dalam file constants sebagai simulasi
+
+Fokus utama pada desain UI, UX, dan flow sistem
+
+🚀 Cara Menjalankan Project
+Prasyarat
+
+Node.js (disarankan v18+)
+
+npm / yarn
+
+Langkah Menjalankan
+git clone https://github.com/Syauqi25062003/digital-library-fti.git
+cd digital-library-fti
 npm install
-
-
-Jalankan development server
-
 npm run dev
 
+Akses aplikasi di browser:
 
-Buka aplikasi di browser
-Biasanya di http://localhost:5173
+http://localhost:5173
+📂 Struktur Folder Utama
+src/
+ ├── components/     # Komponen reusable
+ ├── pages/          # Halaman aplikasi
+ ├── layouts/        # Layout role-based
+ ├── context/        # Auth context (dummy)
+ ├── constants/      # Data dummy & enum
+ └── assets/         # Gambar & file statis
+📌 Status Pengembangan
 
-Catatan Penting
+✔ Prototype frontend selesai ✔ Alur utama sistem tersedia ✔ Siap untuk demonstrasi & laporan KP
 
-Semua akun dummy tersimpan di src/constants/dummyAccounts.js.
+👨‍🎓 Kontributor
 
-Akun mahasiswa baru harus diaktivasi admin agar bisa login.
+Kelompok 1
+220660121001 - M Reksa Aji Winangun
+220660121022 - Syauqi Zainun Nauval
+220660121033 - Rifan Warosy Sirojudin
+220660121036 - Muhammad Fajar Lutfiana
+220660121054 - Virzan Pasa Nugraha
+220660121066 - Siti Rachmania Putri
 
-File PDF yang diunggah disimpan di public/ untuk prototipe ini.
+Program Studi: Fakultas Teknologi Informasi
 
-Watermark resmi tersedia di public/watermark_template.pdf.
+Kegiatan: Kerja Praktik (KP)
 
-Role-based access diterapkan: mahasiswa & admin memiliki halaman dan fitur berbeda.
+📄 Lisensi
 
-Perubahan profil di halaman Pengaturan akan langsung tercermin di halaman Profil.
-
-Teknologi
-
-React + Vite
-
-Tailwind CSS
-
-Context API untuk state global (auth & accounts)
-
-PDF.js untuk preview PDF
+Proyek ini dibuat untuk keperluan akademik dan pembelajaran.
